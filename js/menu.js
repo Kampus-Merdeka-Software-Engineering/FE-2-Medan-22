@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-	fetch('http://localhost:3001/api/v1/dishes')
+	fetch('https://be-2-medan-22.vercel.app//api/v1/dishes')
 		.then((response) => response.json())
 		.then((data) => {
 			const container = document.querySelector('.dish__grid');
@@ -38,7 +38,7 @@ const renderDish = (container, dishes) => {
 		button.addEventListener('click', (event) => {
 			const id = event.target.dataset.id;
 
-			fetch(`http://localhost:3001/api/v1/carts/add/${id}`)
+			fetch(`https://be-2-medan-22.vercel.app//api/v1/carts/add/${id}`)
 				.then((response) => response.json())
 				.then((data) => {
 					alert(data.message);

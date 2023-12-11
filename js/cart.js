@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-	fetch('http://localhost:3001/api/v1/carts')
+	fetch('https://be-2-medan-22.vercel.app//api/v1/carts')
 		.then((res) => res.json())
 		.then((data) => {
 			const cartContainer = document.querySelector('.table__body');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		const errors = document.querySelectorAll('.form__error');
 		errors?.forEach((error) => error.remove());
 
-		fetch('http://localhost:3001/api/v1/carts/clear')
+		fetch('https://be-2-medan-22.vercel.app//api/v1/carts/clear')
 			.then((res) => {
 				if (res.ok) window.location.href = '/cart.html';
 				return res.json();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		const errors = document.querySelectorAll('.form__error');
 		errors?.forEach((error) => error.remove());
 
-		fetch('http://localhost:3001/api/v1/carts/checkout')
+		fetch('https://be-2-medan-22.vercel.app//api/v1/carts/checkout')
 			.then((res) => {
 				if (res.ok) window.location.href = '/cart.html';
 				return res.json();
@@ -91,7 +91,7 @@ const renderCart = (container, carts) => {
 			const id = event.target.dataset.id;
 			const action = event.target.id;
 
-			fetch(`http://localhost:3001/api/v1/carts/${action}/${id}`)
+			fetch(`https://be-2-medan-22.vercel.app//api/v1/carts/${action}/${id}`)
 				.then((res) => res.json())
 				.then((data) => {
 					alert(data.message);

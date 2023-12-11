@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-	fetch('http://localhost:3001/api/v1/orders')
+	fetch('https://be-2-medan-22.vercel.app//api/v1/orders')
 		.then((res) => res.json())
 		.then((data) => {
 			const orderContainer = document.querySelector('.table__body');
