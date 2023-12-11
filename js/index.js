@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-	fetch('https://be-2-medan-22.vercel.app//api/v1/dishes')
+	fetch('https://be-2-medan-22.vercel.app/api/v1/dishes')
 		.then((response) => response.json())
 		.then((data) => {
 			const container = document.querySelector('.dish__grid');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 		if (!data.message) data.message = null;
 
-		fetch('https://be-2-medan-22.vercel.app//api/v1/reservations', {
+		fetch('https://be-2-medan-22.vercel.app/api/v1/reservations', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const renderDish = (container, dishes) => {
 		button.addEventListener('click', (event) => {
 			const id = event.target.dataset.id;
 
-			fetch(`https://be-2-medan-22.vercel.app//api/v1/carts/add/${id}`)
+			fetch(`https://be-2-medan-22.vercel.app/api/v1/carts/add/${id}`)
 				.then((response) => response.json())
 				.then((data) => {
 					alert('Added to cart');

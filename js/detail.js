@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const params = new URLSearchParams(window.location.search);
 	const id = params.get('id');
 
-	fetch(`https://be-2-medan-22.vercel.app//api/v1/orders/${id}`)
+	fetch(`https://be-2-medan-22.vercel.app/api/v1/orders/${id}`)
 		.then((res) => res.json())
 		.then((data) => {
 			const cartContainer = document.querySelector('.table__body');
